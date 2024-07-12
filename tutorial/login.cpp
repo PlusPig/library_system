@@ -42,6 +42,7 @@ bool login_or_register(bool is_login) {
 // 单用户登录注册示例代码，很多细节没有完善
 int main() {
     bool quit = false;
+
     while (!quit) {
         system("cls");
         printf("welcome\n"
