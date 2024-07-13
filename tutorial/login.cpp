@@ -15,7 +15,7 @@ bool login_or_register(bool is_login) {
     printf("password:");
     cin >> password;
 
-    FILE* file = fopen("user.txt", "a+");
+    FILE* file = fopen("tutorial/user.txt", "a+");
     if (file == nullptr) {
         printf("打开文件失败\n");
         return false;
