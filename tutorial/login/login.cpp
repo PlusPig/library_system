@@ -1,46 +1,15 @@
-﻿#include <iostream>
-#include <cstring>
+﻿
+#include "../global.h"
+void login();
 
-using namespace std;
+void test_login_plus();
 
-char buf[1024];
-
-bool login_or_register(bool is_login) {
-    system("cls");
-    printf("please input username and password\n");
-
-    string username, password;
-    printf("username:");
-    cin >> username;
-    printf("password:");
-    cin >> password;
-
-    FILE* file = fopen("tutorial/user.txt", "a+");
-    if (file == nullptr) {
-        printf("打开文件失败\n");
-        return false;
-    }
-
-    bool res = false;
-
-    string w = username+"\n"+password+"\n";
-    if (is_login) {
-        fread(buf, 1, 1024, file);
-        if (strcmp(w.c_str(), buf) == 0) {
-            res = true;
-        }
-    } else {
-        fwrite(w.c_str(), 1, w.size(), file);
-        res = true;
-    }
-
-    fclose(file);
-    return res;
+int main() {
+    test_login_plus();
 }
 
-
-// 单用户登录注册示例代码，很多细节没有完善
-int main() {
+// 旧版代码
+void login() {
     bool quit = false;
     while (!quit) {
         system("cls");
