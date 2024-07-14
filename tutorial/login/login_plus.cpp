@@ -58,6 +58,7 @@ bool login_or_register_plus(bool is_login, const string& username, const string&
     if (is_login) {
         while (!fs.eof()) {
             getline(fs, uname);
+            // 因为写入是两行两行写入的，所以这里不会读到末尾，不用在这里判定eof
             getline(fs, pwd);
             if (uname == username) {
                 if (pwd == password) {
